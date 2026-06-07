@@ -1,11 +1,12 @@
 terraform {
   backend "s3" {
-    bucket = "statebucketdeploy"
+    bucket = "jyotsna-bucket-s3"
     key    = "terraform.tfstate"
-    dynamodb_table = "veera"
-    encrypt = true
+    use_lockfile = true
+    #dynamodb_table = "veera"
+    #encrypt = true
     #use_lockfile = true  #s3 native locking process to prevent concurrent state modifications
-    region = "us-east-1"
+    region = "ap-south-2"
   }
 }
 #supports latest version >=1.10
